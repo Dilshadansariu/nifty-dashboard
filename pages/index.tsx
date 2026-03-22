@@ -48,7 +48,7 @@ const toISTFullString = (date: Date): string =>
 
 // ─── Animated number (ticks up/down on change) ───────────────────────────────
 
-function AnimatedNumber({ value, className }: { value: string; className?: string }) {
+function AnimatedNumber({ value, style }: { value: string; style?: React.CSSProperties }) {
   const [display, setDisplay] = useState(value);
   const [flash, setFlash] = useState<'up' | 'down' | null>(null);
   const prev = useRef(value);
@@ -67,10 +67,10 @@ function AnimatedNumber({ value, className }: { value: string; className?: strin
 
   return (
     <span
-      className={className}
       style={{
+        ...style,
         transition: 'color 0.4s ease',
-        color: flash === 'up' ? '#00d4aa' : flash === 'down' ? '#ff4757' : undefined,
+        color: flash === 'up' ? '#00d4aa' : flash === 'down' ? '#ff4757' : style?.color,
       }}
     >
       {display}
@@ -510,7 +510,6 @@ export default function Home() {
                     <AnimatedNumber
                       key={pulseKey}
                       value={formatNumber(data.regularMarketPrice)}
-                      className=""
                       style={{
                         fontFamily: "'IBM Plex Mono', monospace",
                         fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
@@ -518,7 +517,7 @@ export default function Home() {
                         color: '#f0f4f8',
                         letterSpacing: '-2px',
                         lineHeight: 1,
-                      } as any}
+                      }}
                     />
 
                     {/* Change badge */}
