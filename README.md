@@ -24,6 +24,8 @@ A real-time Nifty 50 dashboard built using Next.js that fetches live market data
 
 ## 🌐 Live Demo
 👉 https://nifty-dashboard-self.vercel.app
+                          OR
+👉https://nifty-dashboard-gswbyjbho-dilshadansarius-projects.vercel.app?_vercel_share=CSFNp4YyoNNxD3Dc5hkMduDSiYuAY9we
 
 ---
 
